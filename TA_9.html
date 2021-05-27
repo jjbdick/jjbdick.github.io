@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="big5">
+    <script type="text/javascript">
+        function TREE(){
+            var tree=document.getElementById("tree").value;
+            document.getElementById("high").innerHTML=tree;
+            let leaf = 1;
+            document.write("tree("+tree+")<br>");
+            for(let i=1;i<=tree;i++){
+                for(let l=0;l<tree-i;l++){
+                    document.write("<span style='white-space:pre;'>"+"  ");
+                }
+                for(let l=0;l<leaf;l++){
+                    document.write("*");
+                }
+                leaf = leaf + 2;
+                document.write("<br>");
+            }
+            for(let i=0;i<tree;i++){
+                for(let l=0;l<tree-1;l++){
+                    document.write("<span style='white-space:pre;'>"+"  ");
+                }
+                document.write("*<br>");
+            }
+        }
+    </script>
+</head>
+<p>
+        
+      high:<input id="tree" type="text">
+      <button onclick="TREE()">start</button>
+    </p>
+    <p>tree(<span id="high">0</span>)<p>
+    <ul id="list"></ul>
+</body>
+</html>
